@@ -1,40 +1,96 @@
-.mlow-market-footer-container {
-  background-color: #000;
+.footer-primary-container {
+  background-color: #231F20;
   color: #fff;
   padding-top: 48px !important;
   margin-top: 0 !important;
+      border-bottom: 3px solid #fff200;
 }
 
-.mlow-market-footer-wrapper {
+.footer-primary-wrapper {
   max-width: 1320px !important;
-  margin: 0 auto; /* Center the container */
+  margin: 0 auto; 
 }
 
-.mlow-market-footer {
+.footer-primary {
+    width: 90%;
+  padding-left: 5%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Allows wrapping in smaller screens */
-  gap: 20px;
+  /* justify-content: space-between; */
+  /* flex-wrap: wrap;  */
+  /* gap: 8%; */
+  padding-top: 40px;
 }
 
 .footer-col {
-  width: 200px; /* Minimum width for responsive design */
+  width: 16.666667%;
   flex-grow: 1;
   padding: 0 8px;
   font-size: 14px;
 }
 
-.footer-col h2 {
-  font-size: 14px;
+.footer-list table:first-child tbody tr td h2 {
   padding-bottom: 8px;
-  border-bottom: 1px solid #d8d6cf !important;
   font-weight: bold;
+  font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    opacity: 1;
+    pointer-events: none;
 }
-
+.footer-list table:first-child tbody tr ul li
+{
+  color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    opacity: .6;
+}
+.footer-list table:nth-child(2) tbody tr td:nth-child(2) picture img
+{
+  background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    /* display: block; */
+    padding: 7px;
+    width: 20px !important;
+    height: 20px !important;
+}
+.footer-list table:nth-child(1) tbody tr td:first-child code
+{
+      color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+}
+.footer-list table:nth-child(2)
+{
+  width: 100%;
+}
+.footer-list table:nth-child(2) tr
+{
+  display: flex;
+}
+.footer-list table:nth-child(2) tr td:nth-child(2) 
+{
+  text-align: right;
+  margin-left: auto;
+}
 .footer-list {
   margin-bottom: 30px;
 }
-
+.footer-list table:first-child tbody
+{
+  display: flex;
+  width: 100%;
+}
+.footer-list table:first-child
+{
+  width: 80%;
+}
+.footer-list table:first-child tbody tr
+{
+  width: 50%;
+}
 .footer-list ul {
   list-style: none;
   padding: 0;
