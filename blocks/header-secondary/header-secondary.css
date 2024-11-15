@@ -11,7 +11,7 @@
 {
     width: 100px !important;
 }
-.secondary-2 table tbody tr td
+.secondary-2 table tbody tr td:not(:first-child)
 {
     display: flex;
 }
