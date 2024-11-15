@@ -1,34 +1,24 @@
-/*
- * Table Block
- * Recreate a table
- * https://www.hlx.live/developer/block-collection/table
- */
-
-function buildCell(rowIndex) {
-  const cell = rowIndex ? document.createElement('td') : document.createElement('th');
-  if (!rowIndex) cell.setAttribute('scope', 'col');
-  return cell;
-}
-
-export default async function decorate(block) {
-  const table = document.createElement('table');
-  const thead = document.createElement('thead');
-  const tbody = document.createElement('tbody');
-
-  const header = !block.classList.contains('no-header');
-  if (header) table.append(thead);
-  table.append(tbody);
-
-  [...block.children].forEach((child, i) => {
-    const row = document.createElement('tr');
-    if (header && i === 0) thead.append(row);
-    else tbody.append(row);
-    [...child.children].forEach((col) => {
-      const cell = buildCell(header ? i : i + 1);
-      cell.innerHTML = col.innerHTML;
-      row.append(cell);
-    });
+export default function decorate(block) {
+  [...block.children].forEach((row, r) => {
+    row.classList.add('header-secondary-'.concat(r + 1));
+    if (r === 0) {
+      [...row.children].forEach((div, d) => {
+        if (d === 0) {
+          div.classList.add('label-1');
+        }
+        if (d === 1) {
+          div.classList.add('label-2');
+        }
+        if (d === 2) {
+          div.classList.add('label-3');
+        }
+        if (d === 3) {
+          
+        }
+        if (d === 3) {
+          div.classList.add('login-button');
+        }
+      });
+    }
   });
-  block.innerHTML = '';
-  block.append(table);
 }
