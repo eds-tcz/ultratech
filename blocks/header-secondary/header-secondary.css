@@ -1,6 +1,7 @@
 .header-secondary-1
 {
     display: flex;
+    justify-content: space-between;
 }
 .secondary-1 picture img
 {
@@ -9,4 +10,8 @@
 .secondary-3 table tbody tr td:nth-child(2) picture img
 {
     width: 100px !important;
+}
+.secondary-2 table tbody tr td:nth-child(2)
+{
+    display: flex;
 }
