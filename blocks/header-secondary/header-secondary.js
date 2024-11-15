@@ -4,13 +4,13 @@ export default function decorate(block) {
     if (r === 0) {
       [...row.children].forEach((div, d) => {
         if (d === 0) {
-          div.classList.add('label-1');
+          div.classList.add('secondary-1');
         }
         if (d === 1) {
-          div.classList.add('label-2');
+          div.classList.add('secondary-2');
         }
         if (d === 2) {
-          div.classList.add('label-3');
+          div.classList.add('secondary-3');
         }
         if (d === 3) {
           
