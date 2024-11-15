@@ -1,0 +1,12 @@
+.header-secondary-1
+{
+    display: flex;
+}
+.secondary-1 picture img
+{
+    width: 140px !important;
+}
+.secondary-3 table tbody tr td:nth-child(2) picture img
+{
+    width: 100px !important;
+}
