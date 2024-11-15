@@ -1,6 +1,6 @@
 .header-primary-container {
   padding: 0 !important;
-  background-color: #fcaf17;
+  background-color: #FFF200;
 }
 
 .header-primary-wrapper {
@@ -9,11 +9,14 @@
 }
 
 .header-primary-1 {
-  height: 72px;
+  height: 31px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
+  opacity: .6;
+  font-family: ut-medium;
+    font-size: 1pc;
 }
 
 .main-logo img {
@@ -29,9 +32,8 @@
 
 .search-bar-container {
   background-color: #fff;
-  width: 446px;
-  height: 40px;
-  border-radius: 20px;
+  width: 344px;
+  height: 44px;
   display: flex;
   justify-content: center;
 }
@@ -39,7 +41,7 @@
 .search-bar {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 344px;
   max-width: 600px;
   border-radius: 50px;
 }
@@ -69,7 +71,7 @@
 
 .login-button {
   align-items: center !important;
-  margin-bottom: -10px;
+  margin-bottom: 0px;
 }
 
 .login-button a {
@@ -83,4 +85,8 @@
   border-radius: 8px;
   padding-top: 10px !important;
   margin-top: 0 !important;
+}
+.header-primary-1 code
+{
+  color: #000;
 }

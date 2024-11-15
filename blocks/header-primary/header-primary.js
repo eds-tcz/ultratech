@@ -1,6 +1,5 @@
 export default function decorate(block) {
   [...block.children].forEach((row, r) => {
-    // Adding Classes to All <div> tags under main tag
     row.classList.add('header-primary-'.concat(r + 1));
     if (r === 0) {
       [...row.children].forEach((div, d) => {
@@ -19,7 +18,6 @@ export default function decorate(block) {
           if (pTag) {
             pTag.remove();
           }
-          // Create and append the search bar dynamically
           const searchBarContainer = document.createElement('div');
           searchBarContainer.classList.add('search-bar-container');
           const searchBar = document.createElement('div');
@@ -27,21 +25,15 @@ export default function decorate(block) {
           const searchIcon = document.createElement('span');
           searchIcon.classList.add('search-icon');
           const searchImage = document.createElement('img');
-          searchImage.src = '../../images/mlow-market-nav-1/search-icon.svg'; // Set your search icon URL
-          searchImage.alt = 'Search Icon';
+          searchImage.src = '../../images/mlow-market-nav-1/search-icon.svg';
           searchImage.width = 24;
           searchImage.height = 24;
           searchIcon.appendChild(searchImage);
-          const inputField = document.createElement('input');
-          inputField.type = 'text';
-          inputField.placeholder = 'Search Stocks, Company, Brands etc.';
           searchBar.appendChild(searchIcon);
-          searchBar.appendChild(inputField);
           searchBarContainer.appendChild(searchBar);
-          // Append the search bar to the div
           div.appendChild(searchBarContainer);
         }
-        if (d === 2) {
+        if (d === 3) {
           div.classList.add('login-button');
         }
       });
