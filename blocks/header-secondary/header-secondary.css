@@ -1,36 +1,141 @@
-.header-secondary-1
+.header-secondary-container
 {
+    margin-top: 5% !important;
+}
+.header-secondary-wrapper
+{
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.header-secondary-1 {
     display: flex;
     justify-content: space-between;
-}
-.secondary-1 picture img
-{
-    width: 140px !important;
-}
-.secondary-3 table tbody tr td:nth-child(2) picture img
-{
-    width: 100px !important;
+        margin-left: auto;
+    width: 85% !important;
+    margin-right: auto;
 }
 
-.secondary-2 table tbody 
+.secondary-1 picture img {
+    width: 140px !important;
+}
+
+.secondary-3 table tbody tr td:nth-child(2) picture img {
+    width: 100px !important;
+}
+.secondary-3 table tbody tr td:first-child
+{
+
+}
+
+.secondary-2 {
+    width: 50%;
+    position: relative;
+    z-index: 1000;
+    background: white;
+}
+
+.secondary-2 table {
+    padding-top: 20px;
+}
+
+.secondary-2 table tbody {
+    display: flex;
+}
+
+.secondary-2 table tbody tr td {
+    display: flex;
+    cursor: pointer;
+}
+.secondary-2 table tbody tr:first-child td picture img
+{
+    width: 35px !important;
+    height: 35px !important;
+}
+.secondary-2 table tbody tr:first-child
+{
+    padding-left: 10px;
+}
+.secondary-2 table tbody tr td
+{
+   font-weight: 400;
+    font-size: 16px;
+} 
+.secondary-2 table tbody tr td picture
+{
+    margin-left: 10px !important;
+}  
+.secondary-2 table tbody tr:not(:first-child) {
+    padding-top: 7px;
+    padding-right: 10px;
+}
+
+.header-secondary {
+    position: relative;
+}
+
+.header-secondary-2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s ease-in-out;
+    pointer-events: none; 
+}
+
+
+.header-secondary:hover .header-secondary-2 {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; 
+}
+
+.header-secondary-2 table {
+    padding: 15px;
+    width: 100%;
+}
+
+.header-secondary-2 p {
+    margin: 8px 0;
+    padding: 5px 15px;
+    transition: background-color 0.2s ease;
+}
+.header-secondary-2 div table tbody
 {
     display: flex;
 }
-.secondary-2 table
-{
-    padding-top: 20px;
+
+.header-secondary-2 p:hover {
+    background-color: #f5f5f5;
 }
-.secondary-2 table tbody tr td 
-{
-    display: flex   ;
+
+.header-secondary::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
 }
-.secondary-2
-{
-    border: 1px solid black;
-    width: 50%;
+
+.header-secondary {
+    padding-bottom: 10px; 
 }
-.secondary-2 table tbody tr:not(:first-child)
+.header-secondary-2 div
 {
-    padding-top: 7px;
-    padding-right: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-secondary-2 div table tbody tr td p:first-child
+{
+    border-bottom: 1px solid black;
+        font-weight: 700;
+    margin-bottom: 10px;
 }

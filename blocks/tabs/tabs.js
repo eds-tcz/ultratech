@@ -1,18 +1,15 @@
-// eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
-  // build tablist
+
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
   tablist.setAttribute('role', 'tablist');
 
-  // decorate tabs and tabpanels
   const tabs = [...block.children].map((child) => child.firstElementChild);
   tabs.forEach((tab, i) => {
     const id = toClassName(tab.textContent);
 
-    // decorate tabpanel
     const tabpanel = block.children[i];
     tabpanel.className = 'tabs-panel';
     tabpanel.id = `tabpanel-${id}`;
@@ -20,7 +17,13 @@ export default async function decorate(block) {
     tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
     tabpanel.setAttribute('role', 'tabpanel');
 
-    // build tab button
+    const tabpanelDivs = tabpanel.querySelectorAll('div');
+    tabpanelDivs.forEach(div => {
+      div.classList.add('tabs-panel-sub'); 
+    });
+
+    applyAccordionToSubItems(tabpanel);
+
     const button = document.createElement('button');
     button.className = 'tabs-tab';
     button.id = `tab-${id}`;
@@ -45,3 +48,37 @@ export default async function decorate(block) {
 
   block.prepend(tablist);
 }
+
+function applyAccordionToSubItems(tabpanel) {
+  const subItems = tabpanel.querySelectorAll('.tabs-panel-sub');
+
+  // Transform all items except the first one (if you want to skip the first one, otherwise remove slice(1))
+  const itemsToTransform = Array.from(subItems).slice(1); 
+
+  itemsToTransform.forEach((subItem) => {
+    // Create a new <details> element for each subItem
+    const details = document.createElement('details');
+    details.classList.add('accordion-item');
+
+    // Create the <summary> element which will act as the header for the accordion
+    const summary = document.createElement('summary');
+    summary.classList.add('accordion-item-label');
+    summary.innerHTML = subItem.innerHTML; // Use subItem's content directly for summary
+    details.appendChild(summary); // Add summary to the details
+
+    // Create the <div> for the accordion's body, containing the content
+    const body = document.createElement('div');
+    body.classList.add('accordion-item-body');
+
+    // Move the actual content from the subItem into the body (don't duplicate)
+    while (subItem.firstChild) {
+      body.appendChild(subItem.firstChild); // Append all child elements to the body
+    }
+
+    details.appendChild(body); // Add the body to the details
+
+    // Replace the original subItem with the details element
+    subItem.replaceWith(details);
+  });
+}
+
