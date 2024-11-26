@@ -20,7 +20,10 @@
   padding: 10px;
   font-family: ut-medium;
     font-size: 1pc;
+    
 }
+
+
 
 .main-logo img {
   width: 285px;
@@ -103,14 +106,29 @@
 .label-2
 {
   margin-right: 15px !important;
+  cursor: pointer;
 }
 .label-1
 {
   margin-right: 15px !important;
+  cursor: pointer;
 }
 .label-3
 {
   margin-right: 15px !important;
+  cursor: pointer;
+}
+.label-2 p code:hover
+{
+  color: #000 !important;
+}
+.label-1:hover
+{
+  color: #000;
+}
+.label-3:hover
+{
+  color: #000;
 }
 .main-search-bar {
   position: relative; 

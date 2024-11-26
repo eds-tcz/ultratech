@@ -18,14 +18,27 @@
 
 .secondary-1 picture img {
     width: 140px !important;
+    cursor: pointer;
 }
 
 .secondary-3 table tbody tr td:nth-child(2) picture img {
     width: 100px !important;
+    height: 70px !important;
 }
-.secondary-3 table tbody tr td:first-child
+.secondary-3 table tbody tr td table tr td
 {
-
+    border: 1px solid black;
+        padding-left: 14px;
+    height: 38px !important;
+    width: 110px !important;
+    font-weight: 700;
+    cursor: pointer;
+}
+.secondary-3 table tbody tr td table tr td:hover
+{
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .secondary-2 {
