@@ -1,36 +1,17 @@
 .tabs .tabs-list {
+  display: flex;
+  gap: 0.5ch;
   max-width: 100%;
   font-size: var(--body-font-size-xs);
   overflow-x: auto;
 }
-.tabs-list {
-  margin: auto;
-  border: 1px solid black;
-  width: 80% !important;
-}
-.tabs-tab {
-  border-right: 1px solid black;
-  width: 25%;
-  padding: 0.5em;
-  background-color: transparent;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.tabs-tab:last-child {
-  border-right: none;
-}
 @media (width >= 600px) {
   .tabs .tabs-list {
     font-size: var(--body-font-size-s);
   }
 }
-.tabs-tab p {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
+
 @media (width >= 900px) {
   .tabs .tabs-list {
     font-size: var(--body-font-size-m);
@@ -40,6 +21,7 @@
 .tabs .tabs-list button {
   flex: 0 0 max-content;
   margin: 0;
+  border: 1px solid #dadada;
   border-radius: 0;
   padding: 0.5em;
   background-color: var(--light-color);
@@ -57,6 +39,7 @@
   margin: 0;
 }
 
+
 .tabs .tabs-list button[aria-selected='true'] {
   border-bottom: 1px solid var(--background-color);
   background-color: var(--background-color);
@@ -66,97 +49,10 @@
 .tabs .tabs-panel {
   margin-top: -1px;
   padding: 24px;
+  border: 1px solid #dadada;
   overflow: auto;
 }
 
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
-}
-
-.tabs-tab::after {
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 10px solid #ff0;
-  content: " ";
-  height: 15px;
-  position: absolute;
-  top: 100%;
-  width: 15px;
-}
-
-.accordion details {
-  border: 1px solid #dadada;
-}
-
-.accordion details + details {
-  margin-top: 24px;
-}
-
-.accordion details p {
-  margin-bottom: 0.8em;
-}
-
-.accordion details summary {
-   display: flex !important;            /* Use flexbox */
-  justify-content: space-between !important;  /* Align the content to both sides */
-  align-items: center;      /* Vertically center the content */
-  padding: 0 16px;
-  cursor: pointer;
-  list-style: none;
-  overflow: auto;
-  transition: background-color 0.2s;
-}
-.tabs-tab.active-tab {
-  background-color: yellow; /* Set the background color to yellow */
-  color: #000; /* Adjust text color if necessary */
-}
-.accordion details summary::marker {
-  content: "+"; /* Set the default marker content */
-  margin-left: 16px; /* Adjust the margin for spacing */
-  font-size: 1.2em;
-}
-.accordion details[open] summary::marker {
-  content: "-";  /* Change the marker content when open */
-}
-.accordion details summary::marker {
-  order: 2;  /* This moves the marker to the rightmost side */
-}
-.accordion details[open] summary {
-  background-color: var(--light-color);
-}
-.accordion details summary p {
-  margin: 0;  /* Ensure no extra margin */
-  flex-grow: 1 !important;/* Allow text to take available space */
-}
-.accordion details summary:focus,
-.accordion details summary:hover {
-  background-color: var(--light-color);
-}
-
-.accordion details summary::-webkit-details-marker {
-  display: none;
-}
-
-.accordion details summary::after {
-  content: '+';
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  transition: transform 0.2s, content 0.2s;
-}
-
-.accordion details[open] summary::after {
-  content: '-';
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.accordion details .accordion-item-body {
-  padding: 0 16px;
-}
-
-.accordion details[open] .accordion-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
 }
