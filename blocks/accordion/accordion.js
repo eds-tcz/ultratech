@@ -1,5 +1,5 @@
 export default function decorateAccordion(block) {
-  const cardCounts = [3, 12, 6, 8];  // Number of cards for each accordion item
+  const cardCounts = [3, 10, 6, 9];  // Number of cards for each accordion item
 
   // Define a global array of unique PDF names and URLs for all the cards
   const pdfTitles = [
