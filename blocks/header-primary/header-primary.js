@@ -33,7 +33,7 @@ export default function decorate(block) {
   const searchIcon = document.createElement('span');
   searchIcon.classList.add('search-icon');
   const searchImage = document.createElement('img');
-  searchImage.src = '../../images/svgviewer-png-output(2).png';  // Image for the search icon
+  searchImage.src = '../../images/search.svg';  // Image for the search icon
   searchImage.width = 24;
   searchImage.height = 24;
   searchIcon.appendChild(searchImage);
@@ -42,7 +42,7 @@ export default function decorate(block) {
   const voiceIcon = document.createElement('span');
   voiceIcon.classList.add('voice-icon');
   const voiceImage = document.createElement('img');
-  voiceImage.src = '../../images/svgviewer-png-output(1).png';  // Image for the microphone icon
+  voiceImage.src = '../../images/download.svg';  // Image for the microphone icon
   voiceImage.width = 24;
   voiceImage.height = 24;
   voiceIcon.appendChild(voiceImage);
