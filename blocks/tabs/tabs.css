@@ -1,9 +1,11 @@
 .tabs .tabs-list {
   display: flex;
-  gap: 0.5ch;
   max-width: 100%;
   font-size: var(--body-font-size-xs);
   overflow-x: auto;
+      margin-right: auto;
+    margin-left: auto;
+    width: 80%;
 }
 
 @media (width >= 600px) {
@@ -19,7 +21,7 @@
 }
 
 .tabs .tabs-list button {
-  flex: 0 0 max-content;
+  width: 25%;
   margin: 0;
   border: 1px solid #dadada;
   border-radius: 0;
@@ -28,7 +30,7 @@
   color: initial;
   font-weight: bold;
   line-height: unset;
-  text-align: initial;
+  text-align: center;
   text-overflow: unset;
   overflow: unset;
   white-space: unset;
@@ -41,12 +43,23 @@
 
 
 .tabs .tabs-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
+border: none;
+  background-color: #fff200;
 }
-
+.tabs .tabs-list button[aria-selected='true']::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Place it below the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #ff0;
+  width: 0;
+  height: 0;
+}
 .tabs .tabs-panel {
+  display: none;
   margin-top: -1px;
   padding: 24px;
   border: 1px solid #dadada;

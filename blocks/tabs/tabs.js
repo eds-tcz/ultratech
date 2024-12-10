@@ -1,7 +1,7 @@
+// eslint-disable-next-line import/no-unresolved
 import { toClassName } from '../../scripts/aem.js';
-import decorateAccordion from './accordion.js';
 
-export default async function decorateTabs(block) {
+export default async function decorate(block) {
   // build tablist
   const tablist = document.createElement('div');
   tablist.className = 'tabs-list';
@@ -19,9 +19,6 @@ export default async function decorateTabs(block) {
     tabpanel.setAttribute('aria-hidden', !!i);
     tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
     tabpanel.setAttribute('role', 'tabpanel');
-
-    // decorate accordion within the tab panel
-    decorateAccordion(tabpanel);
 
     // build tab button
     const button = document.createElement('button');
@@ -42,7 +39,6 @@ export default async function decorateTabs(block) {
       tabpanel.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
     });
-
     tablist.append(button);
     tab.remove();
   });
