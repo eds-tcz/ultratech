@@ -11,9 +11,22 @@ export default function decorate(block) {
         }
         if (d === 2) {
           div.classList.add('secondary-3');
-        }
-        if (d === 3) {
-          
+          const tdElements = div.querySelectorAll('td');
+          tdElements.forEach((td) => {
+            if (td.textContent.trim() === 'Get in Touch') {
+              td.classList.add('touch');
+
+              // Add event listener for toggling the touch-form visibility
+              td.addEventListener('click', () => {
+                const touchForm = document.querySelector('.touch-form');
+                if (touchForm) {
+                  const isHidden = touchForm.style.visibility === 'hidden';
+                  touchForm.style.visibility = isHidden ? 'visible' : 'hidden';
+                  touchForm.style.opacity = isHidden ? '1' : '0'; // Optional for smoother appearance
+                }
+              });
+            }
+          });
         }
         if (d === 3) {
           div.classList.add('login-button');
