@@ -18,11 +18,9 @@ export default function decorate(block) {
 
               // Add event listener for toggling the touch-form visibility
               td.addEventListener('click', () => {
-                const touchForm = document.querySelector('.touch-form');
+                const touchForm = document.querySelector('.touch-form-wrapper');
                 if (touchForm) {
-                  const isHidden = touchForm.style.visibility === 'hidden';
-                  touchForm.style.visibility = isHidden ? 'visible' : 'hidden';
-                  touchForm.style.opacity = isHidden ? '1' : '0'; // Optional for smoother appearance
+                  touchForm.style.display = 'block'; // Show the form
                 }
               });
             }

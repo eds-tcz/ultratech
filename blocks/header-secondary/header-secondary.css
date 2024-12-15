@@ -44,7 +44,6 @@
 .secondary-2 {
     width: 50%;
     position: relative;
-    z-index: 1000;
     background: white;
 }
 

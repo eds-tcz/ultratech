@@ -1,22 +1,26 @@
-const block = document.querySelector('.touch-form');
+const block = document.querySelector('.touch-form-wrapper');
 const categoryToSubcategory = {
   'Choose Your Category': ['Choose Category'],
-  'Option 1': ['Sub Option 1', 'Sub Option 2', 'Sub Option 3'],
-  'Option 2': ['Sub Option A', 'Sub Option B', 'Sub Option C'],
-  'Option 3': ['Sub Option X', 'Sub Option Y', 'Sub Option Z'],
-  'Option 4': ['Sub Option I', 'Sub Option II', 'Sub Option III']
+  'Corporate': ['Exports', 'Media', 'Others','Shareholders','Sustainability'],
+  'Careers': ['Careers'],
+  'Product Purchase Query': ['Building Product', 'Cement', 'Ready Mix Concrete','UltraTech Building Solutions Product, Services and Solutions(Home Expert)'],
+  'Request for Dealership/Retailership': ['Building Products', 'Cement', 'UltraTech Building Solutions(Home Expert)'],
+   'Home Building Guidance': ['BaatGharKi Video and Articles', 'Cement Related', 'Concrete Related','Techinical Expert Guidace & Services','Waterproofing and Other Products'],
+    'Feedback': ['Feedback from Customers', 'Feedback from Dealers/Retailers']
 };
 
-// Create the form fields
+  // Create the form fields
 const fullNameField = createFormField('Full Name', 'text', 'full-name');
 const mobileNumberField = createFormField('Mobile Number', 'tel', 'mobile-number');
 const pinCodeField = createFormField('Pin code', 'text', 'pin-code');
 const categoryField = createSelectField('Choose Category', 'category', [
   'Choose Your Category',
-  'Option 1',
-  'Option 2',
-  'Option 3',
-  'Option 4'
+  'Corporate',
+  'Careers',
+  'Product Purchase Query',
+  'Request for Dealership/Retailership',
+  'Home Building Guidance',
+  'Feedback'
 ]);
 const subCategoryField = createSelectField('Choose Sub Category', 'sub-category', [
   'Choose Category'
@@ -43,6 +47,20 @@ block.appendChild(formRow2);
 block.appendChild(authorizeCheckbox);
 block.appendChild(submitButton);
 
+// Create the cross icon
+const closeIcon = document.createElement('img');
+closeIcon.src = '../../images/cross.svg'; // Update with your cross icon path
+closeIcon.alt = 'Close';
+closeIcon.classList.add('close-icon');
+
+// Append the close icon to the block (top right)
+block.appendChild(closeIcon);
+
+// Add event listener to close the form
+closeIcon.addEventListener('click', function() {
+  block.style.display = 'none'; // Hide the form when the cross icon is clicked
+});
+
 // Create the form fields
 function createFormField(label, type, name) {
   const fieldContainer = document.createElement('div');
@@ -55,6 +73,7 @@ function createFormField(label, type, name) {
   inputField.type = type;
   inputField.name = name;
   inputField.classList.add('form-field');
+  inputField.placeholder = `${label}`; // Placeholder text
 
   fieldContainer.appendChild(labelElement);
   fieldContainer.appendChild(inputField);
@@ -63,6 +82,7 @@ function createFormField(label, type, name) {
 
   return fieldContainer;
 }
+
 
 function createSelectField(label, name, options) {
   const fieldContainer = document.createElement('div');
@@ -147,15 +167,30 @@ function createSubmitButton(label) {
 
   const submitButton = document.createElement('button');
   submitButton.type = 'submit';
-  submitButton.textContent = label;
   submitButton.classList.add('form-field', 'submit-button');
 
+  // Create the SVG icon
+  const arrowIcon = document.createElement('img');
+  arrowIcon.src = '../../images/right-side-arrow.svg'; // Update with the path to your SVG file
+  arrowIcon.alt = 'Right Arrow';
+  arrowIcon.classList.add('right-arrow-icon'); // Optional: Add a class for styling the icon
+
+  // Add the button text
+  const buttonText = document.createElement('span');
+  buttonText.textContent = label;
+
+  // Append the text and the icon to the submit button
+  submitButton.appendChild(buttonText);
+  submitButton.appendChild(arrowIcon);
+
+  // Add the submit button to the button container
   buttonContainer.appendChild(submitButton);
 
   submitButton.addEventListener('click', handleFormSubmit);
 
   return buttonContainer;
 }
+
 
 // Function to handle user input
 function handleFieldInput(event) {

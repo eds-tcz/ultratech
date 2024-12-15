@@ -46,18 +46,18 @@
 border: none;
   background-color: #fff200;
 }
-.tabs .tabs-list button[aria-selected='true']::after {
+/* .tabs .tabs-list button[aria-selected='true']::after {
   content: "";
   position: absolute;
-  top: 100%; /* Place it below the button */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for centering */
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 10px solid #ff0;
   width: 0;
   height: 0;
-}
+} */
 .tabs .tabs-panel {
   display: none;
   margin-top: -1px;

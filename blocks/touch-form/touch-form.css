@@ -1,16 +1,18 @@
-.touch-form-wrapper
-{
+.touch-form-wrapper {
+  display: none; /* Initially hidden */
   background-color: #fff;
-    border-bottom: 3px solid #fff200;
-    left: 50%;
-    padding: 20px;
-    position: fixed;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 760px;
-    z-index: 999;
+  border-bottom: 3px solid #fff200;
+  left: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 699px;
+  z-index: 999;
+  height: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow */
 }
+
 .form .field-wrapper {
   display: grid;
   grid-auto-flow: row;
@@ -163,7 +165,7 @@
   width: 24px;
   height: 24px;
   top: 2px;
-  left: 2px;
+  left: 2px;  
   border-radius: 50%;
   background-color: var(--background-color);
   transition: transform 0.2s;
@@ -181,56 +183,91 @@
 .form .toggle-wrapper input:checked + .slider::before {
   transform: translateX(24px);
 }
-.touch-form {
-  transition: opacity 0.3s ease; /* Smooth transition effect */
-}
 
 #get-in-touch
 {
       font-size: 24px;
-    line-height: 38px;
-    margin-bottom: 10px;
 }
 #get-answer-to-your-queries
 {
   color: #231f20;
-    font-family: ut-regular;
     font-size: 1pc;
     font-weight: 400;
     letter-spacing: -.0018em;
-    line-height: 27px;
+    font-family: 'Roboto-Regular', sans-serif;
 }
-
+.form-field-container
+{
+  margin-bottom: 20px;
+}
 .form-field-container:first-child
 {
   display: grid;
 }
 
-/* Flexbox for the form rows */
 .form-row {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Space between the fields in the row */
+  gap: 20px;
 }
 
-/* Each form field container in the row takes up 48% of the width */
 .form-row .form-field-container {
   width: 48%;
 }
 
-/* Adjust label and input field alignment */
 .form-field-container label {
-  margin-right: 10px; /* Space between label and input */
+  margin-right: 10px;
+  color: #231f20;
+    font-family: 'Roboto-Regular', sans-serif;
 }
 
 .form-field-container input, 
 .form-field-container select {
-  width: 100%; /* Make the inputs/select take up full width */
+  height: 38px;
+  width: 100%; 
 }
 
-/* Additional styling */
+
 .touch-form {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Adjust gap between form rows */
+  transition: opacity 0.3s ease;
+  position: relative;
+  margin-bottom: 1pc !important;
+}
+
+.close-icon {
+background-color: #ff0;
+    position: absolute;
+    top: 0px;
+    right: 0%;
+    width: 3% !important;
+    height: 24px;
+    cursor: pointer;
+}
+input.form-field[type="checkbox"]
+{
+  width: 2% !important;
+  height: 14px !important;
+}
+.submit-button
+{
+       color: black;
+    background-color: #fff200;
+    border: none;
+    font-weight: 500;
+    padding: 13px 20px;
+    position: relative;
+    text-align: left;
+    width: 200px;
+    border-radius: inherit;
+}
+
+.right-arrow-icon {
+  width: 20px !important; 
+  height: 20px;
+  margin-left: 51% !important;
+}
+.submit-button:hover {
+      background-color: #fff200;
 }
